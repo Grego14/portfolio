@@ -1,0 +1,110 @@
+{
+  "conference-ticket": {
+    "description": "Ready to join the conference? Enter your info, generate your pass, and download it instantly. Fast, simple, and all set for your arrival. We’re waiting for you!",
+    "images": [
+      {
+        "alt": "Conference ticket main page",
+        "src": "/images/conference_ticket/ctg_1.png"
+      },
+      {
+        "alt": "Conference ticket completed fields",
+        "src": "/images/conference_ticket/ctg_2.png"
+      },
+      {
+        "alt": "Conference ticket preview and download",
+        "src": "/images/conference_ticket/ctg_3.png"
+      }
+    ],
+    "name": "Conference ticket generator",
+    "pos": 1,
+    "skills": [
+      "react",
+      "html2canvas",
+      "javascript",
+      "html",
+      "css"
+    ],
+    "video": ""
+  },
+  "taskflow": {
+    "backgroundVideo": {
+      "desktop": {
+        "dark": "/videos/taskflow/taskflow-desktop-landing-dark.webm",
+        "light": "/videos/taskflow/taskflow-dekstop-landing-light.webm"
+      },
+      "mobile": {
+        "dark": "/videos/taskflow/taskflow-mobile-landing-dark.webm",
+        "light": "/videos/taskflow/taskflow-mobile-landing-light.webm"
+      },
+      "tablet": {
+        "dark": "/videos/taskflow/taskflow-tablet-landing-dark.webm",
+        "light": "/videos/taskflow/taskflow-tablet-landing-light.webm"
+      }
+    },
+    "description": "An app for managing collaborative or individual projects, contains simple metrics, sort tasks by priorities and assignments, allows the creation of subtasks and much more!",
+    "images": [
+      {
+        "alt": "TaskFlow landing page",
+        "src": {
+          "dark": "/images/taskflow/taskflow-landing-dark.png",
+          "light": "/images/taskflow/taskflow-landing-light.png",
+          "type": "theme"
+        }
+      },
+      {
+        "alt": "TaskFlow project metrics page",
+        "src": {
+          "dark": "/images/taskflow/taskflow-metrics-page-dark.png",
+          "light": "/images/taskflow/taskflow-metrics-page-light.png",
+          "type": "theme"
+        }
+      },
+      {
+        "alt": "TaskFlow profile page",
+        "src": {
+          "dark": "/images/taskflow/taskflow-profile-page-dark.png",
+          "light": "/images/taskflow/taskflow-profile-page-light.png",
+          "type": "theme"
+        }
+      },
+      {
+        "alt": "TaskFlow projects page",
+        "src": {
+          "dark": "/images/taskflow/taskflow-projects-page-dark.png",
+          "light": "/images/taskflow/taskflow-projects-page-light.png",
+          "type": "theme"
+        }
+      }
+    ],
+    "name": "TaskFlow",
+    "pos": 0,
+    "repo": "https://github.com/Grego14/taskflow",
+    "site": "https://apptaskflow.netlify.app",
+    "skills": [
+      "react",
+      "react-hook-form",
+      "i18next",
+      "react-router",
+      "firebase",
+      "gsap",
+      "react-query",
+      "material-ui",
+      "mui-x-charts",
+      "pragmatic-drag-and-drop"
+    ],
+    "videos": [
+      {
+        "alt": "TaskFlow - User authentication",
+        "src": {
+          "desktop": "/videos/taskflow/taskflow-desktop-auth.webm",
+          "mobile": "/videos/taskflow/taskflow-mobile-auth.webm",
+          "type": "screen"
+        }
+      },
+      {
+        "alt": "TaskFlow - How to use",
+        "src": "/videos/taskflow/taskflow-app.webm"
+      }
+    ]
+  }
+}

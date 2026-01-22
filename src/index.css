@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: IndieFlower;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/IndieFlower-Regular.woff2') format('woff2'),
+    url('../fonts/IndieFlower-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Cause;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url('../fonts/Cause-VariableFont_wght.woff2') format('woff2'),
+    url('../fonts/Cause-VariableFont_wght.ttf') format('truetype');
+}
+
+@theme {
+  --font-indieflower: IndieFlower;
+  --font-cause: Cause;
+
+  /* black is used as dark mode background and light-blue is used as 
+  * light mode background */
+  --color-black: #0b0b15;
+  --color-light-blue: #F8FAFC;
+  --color-white: #ebe9f2;
+
+  /* button component colors */
+  --color-light-accent: #91B5EE;
+  --color-light-accent-hover: #91B5EE42;
+
+  --color-dark-accent: #61adf2;
+  --color-dark-accent-hover: #61adf27a;
+
+  --color-button-border-light: #8ecaff;
+  --shadow-button-shadow-light: 0 0 8px #5fb4ff;
+
+  --color-button-border-dark: #74b4ec;
+  --shadow-button-shadow-dark: 0 0 8px #287fcc;
+  /* ----------------------- */
+
+  --text-fluid-name: clamp(2rem, 4.5vw + 1.25rem, 5rem);
+  --text-fluid-role: clamp(1.25rem, 1vw + 1rem, 3rem);
+
+  --avatar-size: clamp(180px, 7.5vw + 180px, 280px);
+
+  --text-fluid-whatIDo-title: clamp(1.875rem, 1.25vw + 1.875rem, 3rem);
+  --text-fluid-whatIDo-text: clamp(1.15rem, 0.75vw + 1.15rem, 1.75rem);
+
+  --color-avatar-dark-border: #071b39;
+  --color-avatar-light-border: #95b6ca;
+  --shadow-avatar-light-shadow: 0 0 20px 10px var(--color-avatar-light-border);
+  --shadow-avatar-dark-shadow: 0 0 20px 10px var(--color-avatar-dark-border);
+
+  /* firebase/firestore, serverless and react words */
+  --color-react-light: #0369a1;
+  --color-serverless-light: #15803d;
+  --color-firebase-light: #c2410c;
+  --color-react-dark: #66cff9;
+  --color-serverless-dark: #6aec8a;
+  --color-firebase-dark: #ffb15f;
+  /* ---------------------------------------------- */
+
+  /* skills container title underline */
+  --card-container-text-border-w: 0;
+  /* ******************************** */
+
+  /* Projects */
+  --text-fluid-project-name: clamp(1.75rem, 3vw + 1.75rem, 4rem);
+  --text-fluid-project-desc: clamp(1rem, 1vw + 1rem, 3rem);
+  --text-fluid-project-skills: clamp(1.25rem, 1vw + 1.25rem, 1.75rem);
+  /* --------------- */
+}

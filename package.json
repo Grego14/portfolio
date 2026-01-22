@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
+    "preact": "^10.27.2",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.8",
+    "@preact/preset-vite": "^2.10.2",
+    "@tailwindcss/vite": "^4.1.17",
+    "tailwindcss": "^4.1.17",
+    "vite": "npm:rolldown-vite@7.2.5"
+  },
+  "name": "mywebsite",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:rolldown-vite@7.2.5"
+    }
+  },
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}

@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html lang='en'>
+<!DOCTYPE HTML>
+<html lang="en">
 
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>👋 Welcome to my website!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GregoDev</title>
+  <link rel='stylesheet' href='/src/index.css' />
+  <link rel="preload" as="image" href="/pfp.png">
 </head>
 
-<body>
-  <h1 style='font-weight: bold;'>👋 Welcome to my website! My name is Gregorio but you can call me Grego</h1>
+<!-- we invert the background colors here so the home circle animation match the
+user theme preferences -->
+
+<body class='dark:bg-light-blue bg-black h-dvh overflow-x-hidden'>
+  <div id="app"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>

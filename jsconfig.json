@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "jsx": "react",
+    "jsxImportSource": "preact",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "paths": {
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@context/*": [
+        "./src/context/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "react": [
+        "./node_modules/preact/compat/"
+      ],
+      "react-dom": [
+        "./node_modules/preact/compat/"
+      ],
+      "react-dom/*": [
+        "./node_modules/preact/compat/*"
+      ],
+      "react/jsx-runtime": [
+        "./node_modules/preact/jsx-runtime"
+      ]
+    },
+    "skipLibCheck": true,
+    "strict": "ESNext",
+    "target": "esnext"
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "**/node_modules/*"
+  ],
+  "include": [
+    "src/**/*",
+    "**/*.js",
+    "**/*.jsx"
+  ]
+}
