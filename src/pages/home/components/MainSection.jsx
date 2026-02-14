@@ -1,12 +1,25 @@
 import Text from '@components/reusable/Text'
 import { useGSAP } from '@gsap/react'
+import useUtils from '@hooks/useUtils'
 import cn from '@utils/cn'
 import textSlideLeft from '@utils/textSlideLeft'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import { useCallback, useState } from 'preact/hooks'
 import MainSectionButtons from './MainSectionButtons'
-import useUtils from '@hooks/useUtils'
+
+const texts = {
+  desc: [
+    'I specialize in',
+    'React',
+    'and',
+    'serverless',
+    'applications powered by',
+    'Firebase',
+    'and its services.'
+  ],
+  title: 'What do I do?'
+}
 
 /** @param {Object} props
  * @param {import('preact/hooks').Dispatch<import('preact/hooks').StateUpdater<import('@pages/home/components/ProfileInfo').Animations>>} props.setAnimationEnded
@@ -121,32 +134,42 @@ export default function MainSection({
       </div>
 
       <div className='text-center md:text-start my-auto'>
-        <Text
-          className='text-fluid-whatIDo-title mb-2 lg:mb-6 opacity-0'
-          id='whatIDoTitle'>
-          What do I do?
-        </Text>
-        <Text
-          className='font-light font-cause text-fluid-whatIDo-text max-w-[50ch] 
-          lg:max-w-[40ch] leading-8.5 md:leading-9.25 opacity-0 tracking-tight
-          [&_span]:text-shadow-[0_0_6px_color-mix(in_srgb,currentColor,white_50%)]
-          [&_span]:dark:text-shadow-[0_0_6px_color-mix(in_srgb,currentColor,white_15%)]
-          '
-          id='whatIDoText'>
-          I specialize in{' '}
-          <span className='font-bold text-react-light dark:text-react-dark'>
-            React
-          </span>{' '}
-          and{' '}
-          <span className='font-bold text-serverless-light dark:text-serverless-dark'>
-            serverless
-          </span>{' '}
-          applications powered by{' '}
-          <span className='font-bold text-firebase-light dark:text-firebase-dark'>
-            Firebase
-          </span>{' '}
-          and its services.
-        </Text>
+        <div>
+          <Text
+            aria-hidden='true'
+            className='text-fluid-whatIDo-title mb-2 lg:mb-6 opacity-0'
+            id='whatIDoTitle'>
+            {texts.title}
+          </Text>
+          <span className='sr-only'>{texts.title}</span>
+        </div>
+
+        <div>
+          <Text
+            aria-hidden='true'
+            className='font-light font-cause text-fluid-whatIDo-text max-w-[45ch] 
+            lg:max-w-[40ch] leading-8.5 md:leading-9.25 opacity-0 tracking-tight
+            [&_span]:text-shadow-[0_0_6px_color-mix(in_srgb,currentColor,white_50%)]
+            [&_span]:dark:text-shadow-[0_0_6px_color-mix(in_srgb,currentColor,white_15%)]
+            '
+            id='whatIDoText'>
+            {texts.desc[0]}{' '}
+            <span className='font-bold text-react-light dark:text-react-dark'>
+              {texts.desc[1]}
+            </span>{' '}
+            {texts.desc[2]}{' '}
+            <span className='font-bold text-serverless-light dark:text-serverless-dark'>
+              {texts.desc[3]}
+            </span>{' '}
+            {texts.desc[4]}{' '}
+            <span className='font-bold text-firebase-light dark:text-firebase-dark'>
+              {texts.desc[5]}
+            </span>{' '}
+            {texts.desc[6]}
+          </Text>
+
+          <span className='sr-only'>{texts.desc.join(' ')}</span>
+        </div>
 
         <MainSectionButtons
           playAnimation={whatIDoAnimationEnded}

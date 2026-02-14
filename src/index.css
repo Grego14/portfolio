@@ -74,3 +74,10 @@
   --text-fluid-project-skills: clamp(1.25rem, 1vw + 1.25rem, 1.75rem);
   /* --------------- */
 }
+
+@layer components {
+  .sr-only {
+    clip-path: inset(50%);
+    @apply absolute w-1 h-1 p-0 -m-[1] overflow-hidden whitespace-nowrap border-0;
+  }
+}
