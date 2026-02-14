@@ -3,8 +3,6 @@ import { useGSAP } from '@gsap/react'
 import cn from '@utils/cn'
 import textSlideLeft from '@utils/textSlideLeft'
 import gsap from 'gsap'
-import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
 import { lazy, Suspense } from 'preact/compat'
 import { useEffect, useRef, useState } from 'preact/hooks'
@@ -14,7 +12,7 @@ const SkillsSection = lazy(() => import('@components/skills/SkillsSection'))
 const Projects = lazy(() => import('@components/projects/Projects'))
 const AboutMe = lazy(() => import('./AboutMe'))
 
-gsap.registerPlugin(useGSAP, SplitText, ScrambleTextPlugin, ScrollTrigger)
+gsap.registerPlugin(useGSAP, SplitText)
 
 /** @typedef {{infoEnded: boolean, showAboutMe: boolean, showSkills: boolean, initialInfoEnded: boolean, mainButtons: boolean}} Animations */
 
@@ -103,6 +101,18 @@ export default function ProfileInfo({ rect }) {
     return () =>
       document.removeEventListener('contextmenu', skillIconContextMenuHandler)
   })
+
+  // wait until the main buttons animations end
+  useEffect(() => {
+    if (!animations.mainButtons) return
+
+    ;(async () => {
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger')
+
+      gsap.registerPlugin(ScrollTrigger)
+      ScrollTrigger.refresh()
+    })()
+  }, [animations.mainButtons])
 
   return (
     <>
