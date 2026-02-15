@@ -1,6 +1,7 @@
 import Button from '@components/reusable/Button'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { useRef } from 'preact/hooks'
 
 /** @param {Object} props
  * @param {boolean} props.playAnimation
@@ -11,12 +12,18 @@ export default function Buttons({
   setAnimationEnded,
   projectsRef
 }) {
+  const cvRef = useRef(null)
+
   useGSAP(() => {
     if (!playAnimation) return
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
-    gsap.set(['#btn-download', '#btn-projects'], { autoAlpha: 0, scale: 0, y: 50 })
+    gsap.set(['#btn-download', '#btn-projects'], {
+      autoAlpha: 0,
+      scale: 0,
+      y: 50
+    })
 
     const goTo = { autoAlpha: 1, scale: 1, y: 0 }
 
@@ -44,9 +51,17 @@ export default function Buttons({
       <Button
         className='opacity-0 text-slate-900'
         id='btn-download'
+        onClick={() => cvRef.current?.click()}
         variant='outline'>
         Download CV
       </Button>
+      <a
+        download='gregorio_pinero_frontend_CV.pdf'
+        href='/gregorio-pinero-cv.pdf'
+        ref={cvRef}
+        style={{ display: 'none' }}>
+        CV
+      </a>
     </div>
   )
 }
