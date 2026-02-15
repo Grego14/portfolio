@@ -147,8 +147,8 @@ export default function MainSection({
         <div>
           <Text
             aria-hidden='true'
-            className='font-light font-cause text-fluid-whatIDo-text max-w-[45ch] 
-            lg:max-w-[40ch] leading-8.5 md:leading-9.25 opacity-0 tracking-tight
+            className='font-light font-cause text-fluid-whatIDo-text max-w-[40ch] 
+            leading-8.5 md:leading-9.25 opacity-0 tracking-tight
             [&_span]:text-shadow-[0_0_6px_color-mix(in_srgb,currentColor,white_50%)]
             [&_span]:dark:text-shadow-[0_0_6px_color-mix(in_srgb,currentColor,white_15%)]
             '
