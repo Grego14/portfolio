@@ -9,40 +9,47 @@ export default function Projects({ projects, setAnimationEnded, projectsRef }) {
   useGSAP(() => {
     if (!projects || Object.keys(projects).length < 1) return
 
-    const tl = gsap.timeline({
-      defaults: { ease: 'power2.out' },
-      scrollTrigger: {
-        anticipatePin: 1,
-        pin: true,
-        scrub: 0.25,
-        trigger: '#projects'
-      }
-    })
+    ;(async () => {
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger')
 
-    // scale the initial project to 0.75 and make the second one 0.75 before
-    // entering
-    const scale = 0.75
-    gsap.set('#conference-ticket', { scale, x: '150%' })
+      gsap.registerPlugin(ScrollTrigger)
+      ScrollTrigger.refresh()
 
-    tl.to(
-      '#taskflow',
-      {
-        duration: 0.3,
-        onStart: () =>
-          setAnimationEnded(prev => ({ ...prev, showSkills: true })),
-        opacity: 0,
-        scale,
-        xPercent: 100
-      },
-      'start'
-    ).to(
-      '#conference-ticket',
-      {
-        scale: 1,
-        x: 0
-      },
-      'start-=0.033'
-    )
+      const tl = gsap.timeline({
+        defaults: { ease: 'power2.out' },
+        scrollTrigger: {
+          anticipatePin: 1,
+          pin: true,
+          scrub: 0.25,
+          trigger: '#projects'
+        }
+      })
+
+      // scale the initial project to 0.75 and make the second one 0.75 before
+      // entering
+      const scale = 0.75
+      gsap.set('#conference-ticket', { scale, x: '150%' })
+
+      tl.to(
+        '#taskflow',
+        {
+          duration: 0.3,
+          onStart: () =>
+            setAnimationEnded(prev => ({ ...prev, showSkills: true })),
+          opacity: 0,
+          scale,
+          xPercent: 100
+        },
+        'start'
+      ).to(
+        '#conference-ticket',
+        {
+          scale: 1,
+          x: 0
+        },
+        'start-=0.033'
+      )
+    })()
   })
 
   return (

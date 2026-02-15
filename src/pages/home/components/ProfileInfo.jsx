@@ -102,18 +102,6 @@ export default function ProfileInfo({ rect }) {
       document.removeEventListener('contextmenu', skillIconContextMenuHandler)
   })
 
-  // wait until the main buttons animations end
-  useEffect(() => {
-    if (!animations.mainButtons) return
-
-    ;(async () => {
-      const { ScrollTrigger } = await import('gsap/ScrollTrigger')
-
-      gsap.registerPlugin(ScrollTrigger)
-      ScrollTrigger.refresh()
-    })()
-  }, [animations.mainButtons])
-
   return (
     <>
       <div className='relative'>
