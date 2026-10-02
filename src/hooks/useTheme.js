@@ -1,5 +1,5 @@
 import { useContext } from 'preact/hooks'
-import { ThemeContext } from '../context/Theme/ThemeContext.js'
+import { ThemeContext } from '../context/Theme/ThemeContext'
 
 export function useTheme() {
   const context = useContext(ThemeContext)
