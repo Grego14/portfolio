@@ -1,110 +1,142 @@
 {
-  "conference-ticket": {
-    "description": "Ready to join the conference? Enter your info, generate your pass, and download it instantly. Fast, simple, and all set for your arrival. We’re waiting for you!",
+  "veloce": {
+    "description": {
+      "en": "An e-commerce demo application built for educational and practice purposes, featuring static product collections, interactive shopping cart, internationalization (i18n), and Firebase authentication.",
+      "es": "Una aplicación de demostración de comercio electrónico creada con fines educativos y de práctica, que cuenta con colecciones estáticas de productos, carrito de compras interactivo, internacionalización (i18n) y autenticación con Firebase."
+    },
     "images": [
       {
-        "alt": "Conference ticket main page",
+        "alt": {
+          "en": "Veloce home page displaying the main hero section and full product catalog",
+          "es": "Página de inicio de Veloce mostrando la sección principal y el catálogo completo de productos"
+        },
+        "src": "/images/veloce/veloce_home.png"
+      },
+      {
+        "alt": {
+          "en": "Product catalog view displaying items and footwear collections",
+          "es": "Vista del catálogo de productos mostrando los artículos y colecciones de calzado"
+        },
+        "src": "/images/veloce/veloce_product_catalog.png"
+      },
+      {
+        "alt": {
+          "en": "Detailed product preview showing images, price, and add to cart options",
+          "es": "Vista previa detallada del producto con imágenes, precio y opciones de añadir al carrito"
+        },
+        "src": "/images/veloce/veloce_product_preview.png"
+      },
+      {
+        "alt": {
+          "en": "Checkout panel and order summary for completing a purchase in Veloce",
+          "es": "Panel de pago y resumen del pedido para completar la compra en Veloce"
+        },
+        "src": "/images/veloce/veloce_buy.png"
+      },
+      {
+        "alt": {
+          "en": "Authentication modal showing Google login and user account options in Veloce",
+          "es": "Modal de autenticación mostrando el inicio de sesión con Google y opciones de cuenta en Veloce"
+        },
+        "src": "/images/veloce/veloce_auth.png"
+      }
+    ],
+    "name": "Veloce",
+    "pos": 0,
+    "skills": [
+      "Astro",
+      "Preact",
+      "Tailwind CSS",
+      "Nano Stores",
+      "Firebase",
+      "GSAP",
+      "Lucide Preact",
+      "TypeScript",
+      "Prettier"
+    ]
+  },
+  "conference-ticket": {
+    "description": {
+      "en": "Ready to join the conference? Enter your info, generate your pass, and download it instantly. Fast, simple, and all set for your arrival. We’re waiting for you!",
+      "es": "¿Listo para unirte a la conferencia? Ingresa tu información, genera tu pase y descárgalo al instante. Rápido, sencillo y todo listo para tu llegada. ¡Te esperamos!"
+    },
+    "images": [
+      {
+        "alt": {
+          "en": "Conference ticket generator main page with empty form",
+          "es": "Página principal del generador de boletos para conferencias con el formulario vacío"
+        },
         "src": "/images/conference_ticket/ctg_1.png"
       },
       {
-        "alt": "Conference ticket completed fields",
+        "alt": {
+          "en": "Conference ticket form with completed user information fields",
+          "es": "Formulario de boleto de conferencia con los campos de información del usuario completados"
+        },
         "src": "/images/conference_ticket/ctg_2.png"
       },
       {
-        "alt": "Conference ticket preview and download",
+        "alt": {
+          "en": "Generated conference ticket preview ready for download",
+          "es": "Vista previa del boleto de conferencia generado listo para descargar"
+        },
         "src": "/images/conference_ticket/ctg_3.png"
       }
     ],
     "name": "Conference ticket generator",
-    "pos": 1,
-    "skills": [
-      "react",
-      "html2canvas",
-      "javascript",
-      "html",
-      "css"
-    ],
-    "video": ""
+    "pos": 2,
+    "skills": ["React", "html2canvas", "JavaScript", "HTML", "CSS"]
   },
   "taskflow": {
-    "backgroundVideo": {
-      "desktop": {
-        "dark": "/videos/taskflow/taskflow-desktop-landing-dark.webm",
-        "light": "/videos/taskflow/taskflow-dekstop-landing-light.webm"
-      },
-      "mobile": {
-        "dark": "/videos/taskflow/taskflow-mobile-landing-dark.webm",
-        "light": "/videos/taskflow/taskflow-mobile-landing-light.webm"
-      },
-      "tablet": {
-        "dark": "/videos/taskflow/taskflow-tablet-landing-dark.webm",
-        "light": "/videos/taskflow/taskflow-tablet-landing-light.webm"
-      }
+    "description": {
+      "en": "An app for managing collaborative or individual projects, contains simple metrics, sort tasks by priorities and assignments, allows the creation of subtasks and much more!",
+      "es": "Una aplicación para gestionar proyectos colaborativos o individuales, incluye métricas sencillas, ordena tareas por prioridades y asignaciones, permite crear subtareas ¡y mucho más!"
     },
-    "description": "An app for managing collaborative or individual projects, contains simple metrics, sort tasks by priorities and assignments, allows the creation of subtasks and much more!",
     "images": [
       {
-        "alt": "TaskFlow landing page",
-        "src": {
-          "dark": "/images/taskflow/taskflow-landing-dark.png",
-          "light": "/images/taskflow/taskflow-landing-light.png",
-          "type": "theme"
-        }
+        "alt": {
+          "en": "TaskFlow home page displaying project management overview and quick actions",
+          "es": "Página de inicio de TaskFlow con la vista general de gestión de proyectos y acciones rápidas"
+        },
+        "src": "/images/taskflow/taskflow_home.png"
       },
       {
-        "alt": "TaskFlow project metrics page",
-        "src": {
-          "dark": "/images/taskflow/taskflow-metrics-page-dark.png",
-          "light": "/images/taskflow/taskflow-metrics-page-light.png",
-          "type": "theme"
-        }
+        "alt": {
+          "en": "Member metrics dashboard showing team performance and task completion statistics",
+          "es": "Panel de métricas de miembros con estadísticas de rendimiento del equipo y tareas completadas"
+        },
+        "src": "/images/taskflow/taskflow_member_metrics.png"
       },
       {
-        "alt": "TaskFlow profile page",
-        "src": {
-          "dark": "/images/taskflow/taskflow-profile-page-dark.png",
-          "light": "/images/taskflow/taskflow-profile-page-light.png",
-          "type": "theme"
-        }
+        "alt": {
+          "en": "User profile section showing user details and assigned task history",
+          "es": "Sección del perfil de usuario mostrando detalles de la cuenta e historial de tareas asignadas"
+        },
+        "src": "/images/taskflow/taskflow_profile.png"
       },
       {
-        "alt": "TaskFlow projects page",
-        "src": {
-          "dark": "/images/taskflow/taskflow-projects-page-dark.png",
-          "light": "/images/taskflow/taskflow-projects-page-light.png",
-          "type": "theme"
-        }
+        "alt": {
+          "en": "Project dashboard interface displaying active tasks, statuses, and workflow boards",
+          "es": "Interfaz del panel del proyecto mostrando tareas activas, estados y tableros de trabajo"
+        },
+        "src": "/images/taskflow/taskflow_project_dashboard.png"
       }
     ],
     "name": "TaskFlow",
-    "pos": 0,
+    "pos": 1,
     "repo": "https://github.com/Grego14/taskflow",
     "site": "https://apptaskflow.netlify.app",
     "skills": [
-      "react",
+      "React",
       "react-hook-form",
       "i18next",
       "react-router",
-      "firebase",
-      "gsap",
+      "Firebase",
+      "GSAP",
       "react-query",
       "material-ui",
       "mui-x-charts",
       "pragmatic-drag-and-drop"
-    ],
-    "videos": [
-      {
-        "alt": "TaskFlow - User authentication",
-        "src": {
-          "desktop": "/videos/taskflow/taskflow-desktop-auth.webm",
-          "mobile": "/videos/taskflow/taskflow-mobile-auth.webm",
-          "type": "screen"
-        }
-      },
-      {
-        "alt": "TaskFlow - How to use",
-        "src": "/videos/taskflow/taskflow-app.webm"
-      }
     ]
   }
 }

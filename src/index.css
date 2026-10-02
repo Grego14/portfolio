@@ -1,83 +1,116 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
-  font-family: IndieFlower;
+  font-family: 'Playpen Sans';
+  src:
+    url('../fonts/PlaypenSans-VariableFont.woff2') format('woff2-variations'),
+    url('../fonts/PlaypenSans-VariableFont.woff2') format('woff2');
+  font-weight: 300 700;
   font-style: normal;
-  font-weight: 400;
   font-display: swap;
-  src: url('../fonts/IndieFlower-Regular.woff2') format('woff2'),
-    url('../fonts/IndieFlower-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: Cause;
+  font-family: 'Inter Variable';
+  src:
+    url('../fonts/Inter-VariableFont.woff2') format('woff2-variations'),
+    url('../fonts/Inter-VariableFont.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
-  font-weight: 200 700;
   font-display: swap;
-  src: url('../fonts/Cause-VariableFont_wght.woff2') format('woff2'),
-    url('../fonts/Cause-VariableFont_wght.ttf') format('truetype');
 }
 
 @theme {
-  --font-indieflower: IndieFlower;
-  --font-cause: Cause;
+  --font-heading: 'Playpen Sans', sans-serif;
+  --font-body: 'Inter Variable', sans-serif;
 
-  /* black is used as dark mode background and light-blue is used as 
-  * light mode background */
-  --color-black: #0b0b15;
-  --color-light-blue: #F8FAFC;
-  --color-white: #ebe9f2;
+  --text-fluid-title: clamp(2.25rem, 5vw + 1.25rem, 5rem);
+  --text-fluid-subtitle: clamp(1.35rem, 1.25vw + 1rem, 3rem);
+  --text-fluid-text: clamp(1rem, 1vw + 0.75rem, 2rem);
 
-  /* button component colors */
-  --color-light-accent: #91B5EE;
-  --color-light-accent-hover: #91B5EE42;
+  --breakpoint-xs: 25rem; /* 400px */
 
-  --color-dark-accent: #61adf2;
-  --color-dark-accent-hover: #61adf27a;
+  --zync-neutral: #090d16;
+  --ice-grey: #f8fafc;
 
-  --color-button-border-light: #8ecaff;
-  --shadow-button-shadow-light: 0 0 8px #5fb4ff;
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-bg: var(--accent-bg);
 
-  --color-button-border-dark: #74b4ec;
-  --shadow-button-shadow-dark: 0 0 8px #287fcc;
-  /* ----------------------- */
+  --color-app: var(--bg-app);
 
-  --text-fluid-name: clamp(2rem, 4.5vw + 1.25rem, 5rem);
-  --text-fluid-role: clamp(1.25rem, 1vw + 1rem, 3rem);
+  --text-shadow-glow: 0 0 4px var(--color-accent);
+}
 
-  --avatar-size: clamp(180px, 7.5vw + 180px, 280px);
+:root {
+  --bg-app: var(--ice-grey);
+  --bg-body: var(--zync-neutral);
 
-  --text-fluid-whatIDo-title: clamp(1.875rem, 1.25vw + 1.875rem, 3rem);
-  --text-fluid-whatIDo-text: clamp(1.15rem, 0.75vw + 1.15rem, 1.75rem);
+  --text-main: #0f172a;
+  --text-secondary: var(--color-slate-700);
 
-  --color-avatar-dark-border: #071b39;
-  --color-avatar-light-border: #95b6ca;
-  --shadow-avatar-light-shadow: 0 0 20px 10px var(--color-avatar-light-border);
-  --shadow-avatar-dark-shadow: 0 0 20px 10px var(--color-avatar-dark-border);
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-bg: rgba(5, 150, 105, 0.1);
+}
 
-  /* firebase/firestore, serverless and react words */
-  --color-react-light: #0369a1;
-  --color-serverless-light: #15803d;
-  --color-firebase-light: #c2410c;
-  --color-react-dark: #66cff9;
-  --color-serverless-dark: #6aec8a;
-  --color-firebase-dark: #ffb15f;
-  /* ---------------------------------------------- */
+.dark {
+  --bg-app: var(--zync-neutral);
+  --bg-body: var(--ice-grey);
 
-  /* skills container title underline */
-  --card-container-text-border-w: 0;
-  /* ******************************** */
+  --text-main: #f8fafc;
+  --text-secondary: var(--color-slate-300);
 
-  /* Projects */
-  --text-fluid-project-name: clamp(1.75rem, 3vw + 1.75rem, 4rem);
-  --text-fluid-project-desc: clamp(1rem, 1vw + 1rem, 3rem);
-  --text-fluid-project-skills: clamp(1.25rem, 1vw + 1.25rem, 1.75rem);
-  /* --------------- */
+  --accent: #10b981;
+  --accent-hover: #34d399;
+  --accent-bg: rgba(16, 185, 129, 0.15);
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+}
+
+@layer base {
+  body {
+    @apply font-body transition-colors;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
 }
 
 @layer components {
   .sr-only {
     clip-path: inset(50%);
-    @apply absolute w-1 h-1 p-0 -m-[1] overflow-hidden whitespace-nowrap border-0;
+    @apply absolute w-1 h-1 p-0 -m-[1px] overflow-hidden whitespace-nowrap border-0;
+  }
+
+  .click {
+    @apply relative flex items-center justify-center p-3.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:text-accent backdrop-blur-lg hover:border-accent/50 shadow-lg transition-colors ease-in-out cursor-pointer;
+  }
+
+  .title {
+    @apply font-black leading-[1.2] text-fluid-title;
+  }
+  .text {
+    @apply font-light text-fluid-text leading-[1.8] max-w-[55ch] text-(--text-secondary) mt-8;
+  }
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
