@@ -10,10 +10,12 @@ const SettingsButton = lazy(() => import('./components/SettingButton'))
 const NavigationControls = lazy(() => import('./components/NavigationControls'))
 const Contact = lazy(() => import('./components/Contact'))
 
+import cn from './utils/cn'
+
 export default function App() {
   const { containerRef } = useNavigation()
 
-  const sectionClass = 'w-full h-full flex-shrink-0 snap-start overflow-y-auto'
+  const sectionClass = 'w-full h-full flex-shrink-0 snap-start overflow-y-auto p-8 overflow-y-hidden'
 
   return (
     <EnterAnimation>
@@ -26,19 +28,19 @@ export default function App() {
           ref={containerRef}
           className='flex w-full h-full overflow-x-auto snap-x snap-mandatory no-scrollbar max-w-[1200px]'
         >
-          <section id='hero' className={sectionClass + ' p-8'}>
+          <section id='hero' className={sectionClass}>
             <Suspense fallback={null}>
               <ProfileInfo />
             </Suspense>
           </section>
 
-          <section id='projects' className={sectionClass + ' p-8'}>
+          <section id='projects' className={cn(sectionClass, 'overflow-y-auto')}>
             <Suspense fallback={null}>
               <Projects />
             </Suspense>
           </section>
 
-          <section id='contact' className={sectionClass + ' p-8'}>
+          <section id='contact' className={sectionClass}>
             <Suspense fallback={null}>
               <Contact />
             </Suspense>
